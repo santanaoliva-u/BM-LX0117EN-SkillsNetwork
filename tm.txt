@@ -1,0 +1,75 @@
+➜  IBM-LX0117EN-SkillsNetwork wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/backup.sh
+--2025-01-05 17:02:52--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/backup.sh
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1071 (1.0K) [text/x-sh]
+Saving to: ‘backup.sh’
+
+backup.sh                                     100%[===============================================================================================>]   1.05K  --.-KB/s    in 0s      
+
+2025-01-05 17:02:52 (15.5 MB/s) - ‘backup.sh’ saved [1071/1071]
+
+➜  IBM-LX0117EN-SkillsNetwork ls
+backup.sh
+➜  IBM-LX0117EN-SkillsNetwork pwd                     
+/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork
+➜  IBM-LX0117EN-SkillsNetwork echo "# BM-LX0117EN-SkillsNetwork" >> README.md
+git init
+git add README.md
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ chmod +x backup.sh
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ ls -l backup.sh   
+-rwxr-xr-x 1 anon anon 1337 Jan  5 18:55 backup.sh
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/important-documents.zip
+--2025-01-05 18:58:02--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/important-documents.zip
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ */1 * * * * cp -r "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/important-documents/" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/"
+
+zsh: no matches found: */1
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ */1 * * * * "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/important-documents/" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/"
+
+zsh: no matches found: */1
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo service cron start
+sudo: service: command not found
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo service cron stop
+sudo: service: command not found
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo systemctl restart cronie.service
+
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo systemctl start cronie.service
+
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo systemctl enable cronie.service
+Created symlink '/etc/systemd/system/multi-user.target.wants/cronie.service' → '/usr/lib/systemd/system/cronie.service'.
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ journalctl -u cronie.service
+
+Jan 05 19:14:32 anon systemd[1]: Started Command Scheduler.
+Jan 05 19:14:32 anon crond[244819]: (CRON) STARTUP (1.7.2)
+Jan 05 19:14:32 anon crond[244819]: (CRON) INFO (Syslog will be used instead of sendmail.)
+Jan 05 19:14:32 anon crond[244819]: (CRON) INFO (RANDOM_DELAY will be scaled with factor 58% if used.)
+Jan 05 19:14:32 anon crond[244819]: (CRON) INFO (running with inotify support)
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ */1 * * * * cp -r "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/important-documents/" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/"
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ */1 * * * * cp -r "/usr/local/bin/backup.sh" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/important-documents/" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/"
+zsh: no matches found: */1
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ */1 * * * * "/usr/local/bin/backup.sh" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/important-documents/" "/home/anon/Documents/UniversidadTecPlayacar/03 - Recursos/05 - Recursos de Capacitación/IBM-LX0117EN-SkillsNetwork/"
+zsh: no matches found: */1
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo systemctl start cronie.service
+
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ sudo systemctl enable cronie.service
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗ ls
+'backup-[1736124288].tar.gz'   backup.sh   important-documents   important-documents.zip   README.md
+➜  IBM-LX0117EN-SkillsNetwork git:(main) ✗                                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
